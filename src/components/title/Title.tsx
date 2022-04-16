@@ -1,10 +1,11 @@
 import { FC } from 'react'
 
-type props = {
+type Ttitle = {
   title: string,
 }
 
-const Title: FC<props> = ({title}) => {
+const Title: FC<Ttitle> = ({title}) => {
+
   return (
     <h1>
         {title}

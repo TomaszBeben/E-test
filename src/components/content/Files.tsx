@@ -1,23 +1,19 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-const Files = () => {
+type Tfiles = {
+  files: Array<{ name: string }> | [],
+}
+
+const Files: FC<Tfiles> = ({ files }) => {
   return (
-    <div>Files</div>
+    <div>
+      {files.map((e, index) => (
+        <div key={index}>
+          {e.name}
+        </div>
+      ))}
+    </div>
   )
 }
 
 export default Files
-
-// import React, {FC} from 'react'
-
-// type prop = {
-//     files: []
-// }
-
-// const Files: FC<prop> = ({files}) => {
-//   return (
-//     <div>{files}</div>
-//   )
-// }
-
-// export default Files

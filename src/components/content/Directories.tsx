@@ -1,29 +1,24 @@
-import React from 'react'
+import React, { FC } from 'react'
+import { Link } from "react-router-dom";
 
-const Directories = () => {
+type Tdirectories = {
+  folders: Array<{ id: number, name: string }> | [],
+  setId: (arg: number) => void,
+}
+
+const Directories: FC<Tdirectories> = ({ folders, setId }) => {
+
+
+
   return (
-    <div>Directories</div>
+    <div>
+      {folders.map((e) => (
+        <div key={e.id}>
+          <Link to={`/${e.name}`} onClick={() => setId(e.id)}>{e.name}</Link>
+        </div>
+      ))}
+    </div>
   )
 }
 
 export default Directories
-// import React,{FC} from 'react'
-
-// // type prop = {
-// //     directories: []
-// // }
-
-// const Directories = <T>(prop: Array<T>) => {
-//   return (
-//     <>
-//     {directories.map((e) => (
-//         <div>
-//             <h1>{e.id}</h1>
-//             <h1>{e.name}</h1>
-//         </div>
-//     ))}
-//     </>
-//   )
-// }
-
-// export default Directories

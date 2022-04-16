@@ -1,4 +1,3 @@
-export type Tcontent = {
-    folders: Array<{id: number, name: string}> | [],
-    files: Array<{name: string}> | [],
+export type Tfolder = {
+  folder: Array<{id: number, name: string}> | [],
   }
