@@ -1,11 +1,10 @@
-import { useState ,useEffect } from 'react';
+import React, { useState ,useEffect } from 'react';
 import { fetch } from './api/fetch';
 
 import './App.css';
 
 import Content from './components/content/Content';
 import Title from './components/Title';
-
 import { Tdata } from './types/Tdata';
 
 function App() {
@@ -16,21 +15,18 @@ function App() {
     directories: [],
     files: [],
   }
-
   const [data, setData] = useState< Tdata >(defaultState)
   const [error, setError] = useState<string>('')
   const [title, setTitle] = useState<string>('')
-  const [id, setId] = useState<number>(0)
 
   useEffect(() => {
-    fetch(setData, setError, setTitle, id)
-  },[id])
+    fetch(setData, setError, setTitle)
+  },[])
 
   return (
     <div className='app_container'>
       <Title title={title}/>
-      <Content folders={data.directories} files={data.files} setId={setId}/>
-      {/* <Content folders={data.directories} files={data.files}/> */}
+      <Content directories={data.directories} files={data.files} />
       {error}
     </div>
   );
