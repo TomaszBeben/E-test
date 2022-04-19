@@ -1,4 +1,4 @@
-import { useState ,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetch } from './api/fetch';
 import './App.css';
 
@@ -16,19 +16,22 @@ function App() {
     files: [],
   }
 
-  const [data, setData] = useState< Tdata >(defaultState)
+  const [data, setData] = useState<Tdata>(defaultState)
   const [error, setError] = useState<string>('')
   const [title, setTitle] = useState<string>('')
   const [id, setId] = useState<number>(0)
+  const [path, setPath] = useState<any>(['root'])
 
   useEffect(() => {
     fetch(setData, setError, setTitle, id)
-  },[id])
+  }, [id])
+
+  console.log(title);
 
   return (
     <div className='app_container'>
-      <Title title={title}/>
-      <Content folders={data.directories} files={data.files} setId={setId}/>
+      <Title path={path} setPath={setPath} setId={setId} />
+      <Content folders={data.directories} files={data.files} setId={setId} setPath={setPath} path={path} />
       {error}
     </div>
   );

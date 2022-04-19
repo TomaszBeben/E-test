@@ -1,6 +1,6 @@
 export type Tdata = {
     id: number,
     name: string,
-    directories: [],
-    files: [],
+    directories: Array<{ id: number, name: string }> | [],
+    files: Array<{ name: string }> | [],
 }

@@ -1,23 +1,26 @@
 import React, { FC } from 'react'
-import { Link } from "react-router-dom";
 
 type Tdirectories = {
   folders: Array<{ id: number, name: string }> | [],
   setId: (arg: number) => void,
+  setPath: (arg: any) => void,
+  path: string[] | [],
 }
 
-const Directories: FC<Tdirectories> = ({ folders, setId }) => {
+const Directories: FC<Tdirectories> = ({ folders, setId, setPath, path }) => {
 
-
+  const pathChange = (elem: string[] | [], name: string) => {
+    setPath((elem: any) => [...elem, name])
+  }
 
   return (
-    <div>
+    <>
       {folders.map((e) => (
-        <div key={e.id}>
-          <Link to={`/${e.name}`} onClick={() => setId(e.id)}>{e.name}</Link>
-        </div>
+            <div key={e.id}>
+              <button onClick={()=>{setId(e.id); pathChange(path, e.name)}} >{e.name}</button>
+            </div>
       ))}
-    </div>
+    </>
   )
 }
 
