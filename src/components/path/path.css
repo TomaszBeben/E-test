@@ -1,0 +1,10 @@
+.path_container {
+    width: auto;
+    border: 1px solid white;
+    margin-bottom: 1rem;
+}
+
+.path_element {
+    font-size: 2rem;
+    cursor: pointer;
+}

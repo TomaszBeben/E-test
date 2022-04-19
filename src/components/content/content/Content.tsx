@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
-import Files from './Files'
-import Directories from './Directories'
+import Files from '../files/Files'
+import Directories from '../directories/Directories'
+import './content.css'
 
 type Tcontent = {
   folders: Array<{ id: number, name: string }> | [],
@@ -13,7 +14,7 @@ type Tcontent = {
 const Content: FC<Tcontent> = ({ folders, files, setId, setPath, path }) => {
 
   return (
-    <div>
+    <div className='content_container' >
       <Directories folders={folders} setId={setId} setPath={setPath} path={path} />
       <Files files={files} />
     </div>
