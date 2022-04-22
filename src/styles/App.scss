@@ -1,0 +1,24 @@
+@import './globalVariables.scss';
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: $standardSpace;
+    @include breakpoint(mobile) {
+        margin-top: 0;
+    }
+}
+
+.app_container {
+    width: 700px;
+    min-height: 80vh;
+    padding: auto;
+    background-color: rgb(35, 35, 35);
+    color: $basic_text_color;
+    @include breakpoint(mobile) {
+        width: 100vw;
+        min-height: 100vh;
+        margin-top: 0;
+    }
+}

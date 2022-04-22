@@ -1,5 +1,6 @@
-@import '../../../styles/globalVariables.scss';
+@import './globalVariables.scss';
 .content_container {
+    padding: $smallSpace;
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
@@ -25,9 +26,17 @@
 .content_icon {
     width: 3rem;
     margin-bottom: 1rem;
+    @include breakpoint(mobile) {
+        width: 3rem * 1.6;
+        margin-bottom: 1rem;
+    }
 }
 
 .content_text {
     font-size: $content_text_size;
     text-align: center;
+    text-overflow: inherit;
+    @include breakpoint(mobile) {
+        font-size: $content_text_size * 1.2;
+    }
 }

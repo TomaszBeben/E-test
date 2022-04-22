@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { fetch } from '../../api/fetch'
-import './App.scss'
 
 import Content from '../content/content/Content'
 import Path from '../path/Path'
