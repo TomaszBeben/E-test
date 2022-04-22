@@ -1,5 +1,5 @@
-import React, { FC } from 'react'
-import './directories.css'
+import { FC } from 'react'
+import { iconSelect } from '../../../utils/iconSelect'
 
 type Tdirectories = {
   folders: Array<{ id: number, name: string }> | [],
@@ -11,18 +11,18 @@ type Tdirectories = {
 const Directories: FC<Tdirectories> = ({ folders, setId, setPath, path }) => {
 
   const pathChange = (elem: string[] | [], name: string) => {
-    setPath((elem: any) => [...elem, `/${name}`])
+    setPath((elem: string[] | []) => [...elem, name])
   }
 
   return (
     <>
       {folders.map((e) => (
             <div
-            className='directories_element'
+            className='content_element'
             key={e.id}
             onClick={()=>{setId(e.id); pathChange(path, e.name)}}>
-              <div>Folder</div>
-              <p>{e.name}</p>
+              <img className='content_icon' src={iconSelect(e.name)} alt={e.name} />
+              <p className='content_text' >{e.name}</p>
             </div>
       ))}
     </>

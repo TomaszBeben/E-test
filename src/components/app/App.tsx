@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetch } from '../../api/fetch'
-import './App.css'
+import './App.scss'
 
 import Content from '../content/content/Content'
 import Path from '../path/Path'
@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     fetch(setData, setError, id)
   }, [id])
-  console.log(id);
+
   return (
     <div className='app_container'>
       <Path path={path} setPath={setPath} setId={setId} />

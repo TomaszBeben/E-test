@@ -1,0 +1,18 @@
+@import '../../styles/globalVariables.scss';
+.path_container {
+    margin-bottom: $standardSpace;
+     :hover {
+        color: white;
+    }
+}
+
+.path_element {
+    cursor: pointer;
+    @include breakpoint(mobile) {
+        font-size: $path_text_size * 1.2;
+    }
+    margin-right: 0.5rem;
+     :hover {
+        text-shadow: 2px 2px 15px 6px rgb(202, 202, 212);
+    }
+}

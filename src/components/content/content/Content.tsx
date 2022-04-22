@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import Files from '../files/Files'
 import Directories from '../directories/Directories'
-import './content.css'
 
 type Tcontent = {
   folders: Array<{ id: number, name: string }> | [],

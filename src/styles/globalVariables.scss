@@ -1,0 +1,25 @@
+//breakpoints
+@mixin breakpoint($point) {
+    @if $point==mobile {
+        @media (max-width: 720px) {
+            @content;
+        }
+    }
+    @else if $point==desktop {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+}
+
+//text sizes
+$path_text_size: 1.5rem;
+$content_text_size: 0.7rem;
+//
+//text colors
+$basic_text_color: rgb(210, 210, 210);
+$hover_text_color: white;
+//
+//margins and spaces
+$smallSpace: 0.9rem;
+$standardSpace: 1.7rem;
