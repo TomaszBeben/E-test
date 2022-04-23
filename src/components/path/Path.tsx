@@ -21,7 +21,7 @@ const Path: FC<Tpath> = ({ path, setPath, setId }) => {
   return (
     <div className='path_container' >
       {
-        path.map<React.ReactNode>((elem, index) => (
+        path?.map((elem, index) => (
           <span
             className='path_element'
             key={index}
@@ -29,7 +29,7 @@ const Path: FC<Tpath> = ({ path, setPath, setId }) => {
             <span>
               {elem}
             </span>
-            <span className='path_slashSign' >
+            <span className='path_separator' >
               {index === path.length - 1 ? null: '/' }
             </span>
           </span>
