@@ -1,18 +1,19 @@
-import { FC } from 'react'
-import { iconSelect } from '../../../utils/iconSelect'
+import { FC } from 'react';
+import { iconSelect } from '../../../utils/iconSelect';
 
 type Tdirectories = {
   folders: Array<{ id: number, name: string }> | [],
   setId: (arg: number) => void,
   setPath: (arg: any) => void,
   path: string[] | [],
-}
+};
 
 const Directories: FC<Tdirectories> = ({ folders, setId, setPath, path }) => {
-
+  
+  // function to add new root
   const pathChange = (elem: string[] | [], name: string) => {
     setPath((elem: string[] | []) => [...elem, name])
-  }
+  };
 
   return (
     <>
@@ -27,7 +28,7 @@ const Directories: FC<Tdirectories> = ({ folders, setId, setPath, path }) => {
             </div>
       ))}
     </>
-  )
-}
+  );
+};
 
 export default Directories

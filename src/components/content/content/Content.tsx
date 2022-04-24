@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
+
 import Files from '../files/Files'
 import Directories from '../directories/Directories'
 

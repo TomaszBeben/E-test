@@ -3,4 +3,4 @@ export type Tdata = {
     name: string,
     directories: Array<{ id: number, name: string }> | [],
     files: Array<{ name: string }> | [],
-}
+};
