@@ -89,9 +89,9 @@ All the elements of path are interactive except last, where user is located
 Types folder contain only types i had to use multiple times
 
 ### [utils]
--iconSelect.ts
+`iconSelect.ts`
     takes name of provided data and return correct icon
--nameCut.ts
+`nameCut.ts`
     takes name of provided data, check how long the name is and return it shortened or not
 
 ### [Tests]
