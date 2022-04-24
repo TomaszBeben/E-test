@@ -25,8 +25,9 @@ const Path: FC<Tpath> = ({ path, setPath, setId }) => {
           <span
             className='path_element'
             key={index}
-            onClick={() => { deleteElement(path, setPath, index); breadCrumbsFunc(path, index) }}>
-            <span>
+            onClick={() => { deleteElement(path, setPath, index); breadCrumbsFunc(path, index) }}
+            >
+            <span data-testid='path'>
               {elem}
             </span>
             <span className='path_separator' >

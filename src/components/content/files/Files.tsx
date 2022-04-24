@@ -11,7 +11,11 @@ const Files: FC<Tfiles> = ({ files }) => {
   return (
     <>
       {files.map((e, index) => (
-        <div title={e.name} className='content_element' key={index}>
+        <div 
+        title={e.name}
+        className='content_element'
+        key={index}
+        data-testid='files'>
           <img className='content_icon' src={iconSelect(e.name)} alt={e.name} />
           <p className='content_text' >{nameCut(e.name)}</p>
         </div>

@@ -20,7 +20,8 @@ const Directories: FC<Tdirectories> = ({ folders, setId, setPath, path }) => {
             <div
             className='content_element'
             key={e.id}
-            onClick={()=>{setId(e.id); pathChange(path, e.name)}}>
+            onClick={()=>{setId(e.id); pathChange(path, e.name)}}
+            data-testid='directories'>
               <img className='content_icon' src={iconSelect(e.name)} alt={e.name} />
               <p className='content_text' >{e.name}</p>
             </div>
